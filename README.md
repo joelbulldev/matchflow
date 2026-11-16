@@ -6,8 +6,6 @@ Collect smarter. Pay correctly. Move money anywhere.
 
 MATCHFLOW is a **self-hosted financial operations platform**: multi-organization receivables and payables, procurement and three-way match, approvals, reconciliation, and cross-chain settlement on a single evidence-to-settlement ledger. Organizations interact through a React application; the API and domain logic are PHP services backed by MySQL.
 
-WordPress is the **supported runtime host** (authentication, cron, options, file storage) — not the product identity. The platform is the MATCHFLOW workspace, API (`/api/v1`), and settlement engine.
-
 **Repository:** [github.com/joelbulldev/matchflow](https://github.com/joelbulldev/matchflow)
 
 ## Platform capabilities
@@ -27,14 +25,12 @@ WordPress is the **supported runtime host** (authentication, cron, options, file
 | `includes/` | Domain services, REST controllers, settlement engine |
 | `matchflow.php` | Host bootstrap (activates platform on WordPress) |
 | `assets/build/` | Compiled frontend (run `npm run build`) |
-| `docs/` | Architecture, deployment, acceptance criteria |
 
 ```text
 Browser SPA → /api/v1 → Matchflow REST → Domain → mf_* tables
                       ↘ NEAR Intents 1Click
 ```
 
-See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) and [docs/MATCHFLOW_SYSTEM_OVERVIEW_FOR_ANALYSIS.md](docs/MATCHFLOW_SYSTEM_OVERVIEW_FOR_ANALYSIS.md).
 
 ## Requirements
 
@@ -86,12 +82,6 @@ Public API base: **`/api/v1`** (alias to `matchflow/v1` REST).
 - Settlement recorded only after verified `SUCCESS` status
 - Business APIs do not use `admin-ajax`
 
-## Documentation
-
-- [ARCHITECTURE.md](docs/ARCHITECTURE.md)
-- [DEMO-SCRIPT.md](docs/DEMO-SCRIPT.md)
-- [SUBMISSION.md](docs/SUBMISSION.md)
-- [deploy/hackathon-production-guide.md](docs/deploy/hackathon-production-guide.md)
 
 ## License
 
